@@ -1,3 +1,6 @@
-import supervisor
-
-supervisor.set_next_stack_limit(4096 + 4096)
+import storage
+storage.remount("/", readonly=False)
+m = storage.getmount("/")
+m.label = "LULUL"
+storage.remount("/", readonly=True)
+storage.enable_usb_drive()
